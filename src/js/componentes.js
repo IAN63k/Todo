@@ -12,9 +12,9 @@ const btnBorrar = document.querySelector('.clear-completed');
 export const crearTodoHtml = (todo) => {
 
     const htmlTodo = `
-    <li class="${(todo.completado) ? 'completed' : ''}" data-id="${todo.id}">
+    <li class="${(todo.completado) ? 'completed' : ''}" data-id="${ todo.id }">
         <div class="view">
-			<input class="toggle" type="checkbox" ${(todo.completado) ? 'ckecked' : ''}">
+			<input class="toggle" type="checkbox" ${(todo.completado) ? 'ckecked' : ''}>
 			<label>${todo.tarea}</label>
 			<button class="destroy"></button>
 		</div>
@@ -35,7 +35,6 @@ export const crearTodoHtml = (todo) => {
 txtInput.addEventListener('keyup', (event) => {
 
     if (event.keyCode == 13 && txtInput.value.length > 0) {
-        console.log(txtInput.value);
         const nuevoTodo = new Todo(txtInput.value);
         todoList.nuevoTodo(nuevoTodo);
         crearTodoHtml(nuevoTodo);
@@ -47,14 +46,14 @@ txtInput.addEventListener('keyup', (event) => {
 
 divTodoList.addEventListener('click', (event) => {
     const nombreElemento = event.target.localName; // input, label, button.
-
     const todoElemento = event.target.parentElement.parentElement;
-
     const todoId = todoElemento.getAttribute('data-id');
-
+    console.log(todoElemento);
+    console.log(todoId);
     if (nombreElemento.includes('input')) {
         // click en el check
         todoList.marcarCompletado(todoId);
+        // console.log(todoList);
         todoElemento.classList.toggle('completed');
     } else if (nombreElemento.includes('button')) {// Hay que borrar el todo
 
