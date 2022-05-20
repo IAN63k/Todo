@@ -1,6 +1,18 @@
 
 export class Todo {
 
+
+    static fromJson({id, tarea, completado, creado}) {
+        
+        const temTodo       = new Todo(tarea);
+
+        temTodo.id          = id;
+        temTodo.completado  = completado;
+        temTodo.creado      = creado;
+
+        return temTodo;
+    }
+
     constructor(tarea) {
 
         this.tarea = tarea;
@@ -9,6 +21,8 @@ export class Todo {
         this.creado = new Date();
     }
 
-
+    imprimirClase() {
+        console.log(`${this.tarea} - ${this.id}`);
+    }
 }
 
