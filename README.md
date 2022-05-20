@@ -1,10 +1,10 @@
-# Webpack Started
+# Todo App con javaScript y Webpack 
 
-Este es el proyecto inicial para crear aplicaciones utilizando webpack.
+Este es el proyecto una lista de tareas por hacer.
 
 ### Notas:
 
-Reconstruir los moculos de Node
+Reconstruir los modulos de Node
 ```
 npm install
 ```
